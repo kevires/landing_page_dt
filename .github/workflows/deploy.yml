@@ -21,17 +21,6 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-     # app module
-  app:
-    runs-on: ubuntu-latest
-    name: app-node-${{ matrix.node }}
-    strategy:
-      matrix:
-        node: [ 16, 20 ]
-      fail-fast: true
-    defaults:
-      run:
-        working-directory: app
   # Single deploy job since we're just deploying
   deploy:
     environment:
@@ -46,8 +35,6 @@ jobs:
         with:
           node-version: 18
           cache: 'yarn'
-          cache-dependency-path: "app"
-
       - name: Install dependencies
         run: yarn
       - name: Build
