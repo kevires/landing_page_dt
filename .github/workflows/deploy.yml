@@ -38,7 +38,6 @@ jobs:
         with:
           node-version: 18
           cache: 'yarn'
-          cache-dependency-path: './landing_page_dt/yarn.lock'
       - name: Install dependencies
         run: yarn
       - name: Build
