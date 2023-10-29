@@ -23,6 +23,9 @@ concurrency:
 jobs:
   # Single deploy job since we're just deploying
   deploy:
+    defaults:
+        run:
+          working-directory: ./landing_page_dt/
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -35,7 +38,7 @@ jobs:
         with:
           node-version: 18
           cache: 'yarn'
-          cache-dependency-path: ../../yarn.lock
+          cache-dependency-path: './landing_page_dt/yarn.lock'
       - name: Install dependencies
         run: yarn
       - name: Build
