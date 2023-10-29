@@ -1,13 +1,11 @@
 import dns from 'dns'
-import { viteSingleFile } from 'vite-plugin-singlefile'
-
 import path from 'path'
 const { createVuePlugin } = require('vite-plugin-vue2')
 dns.setDefaultResultOrder('verbatim')
 
 module.exports = {
   base: '/landing_page_dt/',
-  plugins: [createVuePlugin(), viteSingleFile()],
+  plugins: [createVuePlugin()],
   externals: ['vue'],
   server: {
     port: 8000,
