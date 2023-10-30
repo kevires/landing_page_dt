@@ -60,11 +60,11 @@ export default {
   components: { Navbar, SmoothScrollIcon, HistoriesSection, PostModal },
   props: ["noBg"],
   watch: {
-    noBg() {
-      if (!this.noBg) {
-        setTimeout(this.handleTriggerScrollHorizon, 1500);
-      }
-    }
+    // noBg() {
+    //   if (!this.noBg) {
+    //     setTimeout(this.handleTriggerScrollHorizon, 1500);
+    //   }
+    // }
   },
 
   methods: {
@@ -99,20 +99,20 @@ export default {
     }
   },
   mounted() {
-    window.addEventListener("mousewheel", this.handleScroll);
-    window.addEventListener("touchmove", this.handleScroll);
+    // window.addEventListener("mousewheel", this.handleScroll);
+    // window.addEventListener("touchmove", this.handleScroll);
   },
   destroyed() {
-    window.removeEventListener("mousewheel", this.handleScroll);
+    // window.removeEventListener("mousewheel", this.handleScroll);
 
-    const homeEl = document.querySelector("#homeContainer");
-    if (!homeEl) return;
+    // const homeEl = document.querySelector("#homeContainer");
+    // if (!homeEl) return;
 
-    homeEl.addEventListener(
-      "mousewheel",
-      e => this.scrollHorizon(e, homeEl),
-      false
-    );
+    // homeEl.addEventListener(
+    //   "mousewheel",
+    //   e => this.scrollHorizon(e, homeEl),
+    //   false
+    // );
   }
 };
 </script>
