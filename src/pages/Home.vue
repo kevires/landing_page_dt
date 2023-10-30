@@ -3,7 +3,7 @@
     <Transition name="fade-out">
       <div class="title-container">
         <p class="text-white mt-24">{{ $t('lbl_history_of_formation_and_development') }}</p>
-        <!-- <SmoothScrollIcon></SmoothScrollIcon> -->
+        <SmoothScrollIcon></SmoothScrollIcon>
       </div>
     </Transition>
     <!-- <div v-show="!noBg" class="bg-orange-150 h-full relative animate__animated animate__zoomIn">
