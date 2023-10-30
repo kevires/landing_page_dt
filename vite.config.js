@@ -5,7 +5,7 @@ dns.setDefaultResultOrder("verbatim");
 import path from "path";
 
 module.exports = {
-  base:'',
+  base:'landing_page_dt',
   plugins: [createVuePlugin()],
   externals: ["vue"],
   server: {
