@@ -1,12 +1,12 @@
 <template>
   <div id="SectionContainer" class="h-full relative min-w-screen overflow-hidden w-full">
     <Transition name="fade-out">
-      <div v-if="noBg" class="title-container">
+      <div class="title-container">
         <p class="text-white mt-24">{{ $t('lbl_history_of_formation_and_development') }}</p>
-        <SmoothScrollIcon></SmoothScrollIcon>
+        <!-- <SmoothScrollIcon></SmoothScrollIcon> -->
       </div>
     </Transition>
-    <div v-show="!noBg" class="bg-orange-150 h-full relative animate__animated animate__zoomIn">
+    <!-- <div v-show="!noBg" class="bg-orange-150 h-full relative animate__animated animate__zoomIn">
       <div class="flex h-full w-full pb-20 lg:pb-0">
         <Navbar />
         <div
@@ -43,7 +43,7 @@
           <span class="animate__animated animate__fadeInUp">{{ $t('lbl_archive') }}</span>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <PostModal />
   </div>

@@ -11,7 +11,7 @@ const routes = [
     name: "404",
   },
   {
-    path: "/",
+    path: "/landing_page_dt",
     name: "Home",
     meta: { layout: "app", public: true },
     component: () => import("@/pages/Home.vue"),
@@ -56,15 +56,15 @@ const router = new VueRouter({
 });
 
 router.beforeEach(async (to, from, next) => {
-  if (!to.meta.public) {
-    if (!store.state.auth.token) {
-      await store.dispatch("auth/getUserInfo");
+  // if (!to.meta.public) {
+  //   if (!store.state.auth.token) {
+  //     await store.dispatch("auth/getUserInfo");
 
-      if (!store.state.auth.token) {
-        return next({ name: "Login" });
-      }
-    }
-  }
+  //     if (!store.state.auth.token) {
+  //       return next({ name: "Login" });
+  //     }
+  //   }
+  // }
   return next();
 });
 
