@@ -60,11 +60,11 @@ export default {
   components: { Navbar, SmoothScrollIcon, HistoriesSection, PostModal },
   props: ['noBg'],
   watch: {
-    noBg () {
-      if (!this.noBg) {
-        setTimeout(this.handleTriggerScrollHorizon, 1500)
-      }
-    }
+    // noBg () {
+    //   if (!this.noBg) {
+    //     setTimeout(this.handleTriggerScrollHorizon, 1500)
+    //   }
+    // }
   },
 
   methods: {
