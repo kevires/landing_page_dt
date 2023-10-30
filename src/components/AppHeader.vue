@@ -54,43 +54,43 @@
     </div>
   </header>
 </template>
+  
+  <script>
+import { LANGUAGE_CODES_NAME } from "@/lang";
+import { NAV_LIST } from "../utils/constant";
 
-<script>
-import { LANGUAGE_CODES_NAME } from '@/lang'
-import { NAV_LIST } from '../utils/constant'
-
-export const HEADER_HEIGHT = 90
+export const HEADER_HEIGHT = 90;
 
 export default {
-  name: 'AppHeader',
+  name: "AppHeader",
   components: {},
-  data () {
+  data() {
     return {
       LANGUAGE_CODES_NAME,
       NAV_LIST,
       isOpen: false,
       currentNav: NAV_LIST[0],
       HEADER_HEIGHT
-    }
+    };
   },
-  props: ['noBg'],
+  props: ["noBg"],
   computed: {},
   methods: {
-    toggleMenu () {
-      this.isOpen = !this.isOpen
+    toggleMenu() {
+      this.isOpen = !this.isOpen;
     },
-    changeLanguage (l) {
-      const lang = l?.toLocaleLowerCase()
-      this.$lang = lang
-      this.$forceUpdate()
+    changeLanguage(l) {
+      const lang = l?.toLocaleLowerCase();
+      this.$lang = lang;
+      this.$forceUpdate();
     },
-    handleChangeNav (nav) {
-      this.currentNav = nav
+    handleChangeNav(nav) {
+      this.currentNav = nav;
     }
   }
-}
+};
 </script>
-
+  
 <style lang="scss" scoped>
 #AppHeader {
   animation: fade-in 2s ease-in-out;
@@ -140,3 +140,4 @@ export default {
   }
 }
 </style>
+  

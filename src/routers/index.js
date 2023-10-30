@@ -1,71 +1,71 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import store from '@/stores/index'
+import Vue from "vue";
+import VueRouter from "vue-router";
+import store from "@/stores/index";
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '*',
-    meta: { layout: 'app' },
-    name: '404'
+    path: "*",
+    meta: { layout: "app" },
+    name: "404",
   },
   {
-    path: '/',
-    name: 'Home',
-    meta: { layout: 'app', public: true },
-    component: () => import('@/pages/Home.vue')
+    path: "/",
+    name: "Home",
+    meta: { layout: "app", public: false },
+    component: () => import("@/pages/Home.vue"),
   },
   {
-    path: '/login',
-    name: 'Login',
-    meta: { layout: 'login', public: true },
-    component: () => import('@/pages/Login.vue')
+    path: "/login",
+    name: "Login",
+    meta: { layout: "login", public: true },
+    component: () => import("@/pages/Login.vue"),
   },
   {
-    path: '/archive',
-    name: 'Archive',
-    meta: { layout: 'archive', public: false },
-    component: () => import('@/pages/Archive.vue')
+    path: "/archive",
+    name: "Archive",
+    meta: { layout: "archive", public: false },
+    component: () => import("@/pages/Archive.vue"),
   },
   {
-    path: '/archive/:index',
-    name: 'ArchiveDetail',
-    meta: { layout: 'archive', public: false },
-    component: () => import('@/pages/ArchiveDetail.vue')
-  }
-]
+    path: "/archive/:index",
+    name: "ArchiveDetail",
+    meta: { layout: "archive", public: false },
+    component: () => import("@/pages/ArchiveDetail.vue"),
+  },
+];
 
 const router = new VueRouter({
-  scrollBehavior (to, from, savedPosition) {
+  scrollBehavior(to, from, savedPosition) {
     if (to.hash) {
       return {
         selector: to.hash,
-        behavior: 'smooth'
-      }
+        behavior: "smooth",
+      };
     }
     if (savedPosition) {
-      return savedPosition
+      return savedPosition;
     } else if (to.path !== from.path) {
-      return { x: 0, y: 0 }
+      return { x: 0, y: 0 };
     }
   },
-  mode: 'history',
+  mode: "history",
   // base: import.meta.env.VITE_APP_BASE_URL,
-  routes
-})
+  routes,
+});
 
 router.beforeEach(async (to, from, next) => {
-  // if (!to.meta.public) {
-  //   if (!store.state.auth.token) {
-  //     await store.dispatch("auth/getUserInfo");
+  if (!to.meta.public) {
+    if (!store.state.auth.token) {
+      await store.dispatch("auth/getUserInfo");
 
-  //     if (!store.state.auth.token) {
-  //       return next({ name: "Login" });
-  //     }
-  //   }
-  // }
-  return next()
-})
+      if (!store.state.auth.token) {
+        return next({ name: "Login" });
+      }
+    }
+  }
+  return next();
+});
 
-export default router
+export default router;

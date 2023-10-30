@@ -1,11 +1,12 @@
 <template>
   <div id="SectionContainer" class="h-full relative min-w-screen overflow-hidden w-full">
-    <!-- <Transition name="fade-out"> -->
-      <div class="title-container">
+    <Transition name="fade-out">
+      <div v-if="noBg" class="title-container">
         <p class="text-white mt-24">{{ $t('lbl_history_of_formation_and_development') }}</p>
+        <SmoothScrollIcon></SmoothScrollIcon>
       </div>
-    <!-- </Transition> -->
-    <!-- <div v-show="!noBg" class="bg-orange-150 h-full relative animate__animated animate__zoomIn">
+    </Transition>
+    <div v-show="!noBg" class="bg-orange-150 h-full relative animate__animated animate__zoomIn">
       <div class="flex h-full w-full pb-20 lg:pb-0">
         <Navbar />
         <div
@@ -42,78 +43,78 @@
           <span class="animate__animated animate__fadeInUp">{{ $t('lbl_archive') }}</span>
         </div>
       </div>
-    </div> -->
+    </div>
 
     <PostModal />
   </div>
 </template>
 
 <script>
-import Navbar from '@/components/Navbar.vue'
-import SmoothScrollIcon from '@/components/SmoothScrollIcon.vue'
-import HistoriesSection from '../components/Section/HistoriesSection.vue'
-import PostModal from '../components/Modals/PostModal.vue'
+import Navbar from "@/components/Navbar.vue";
+import SmoothScrollIcon from "@/components/SmoothScrollIcon.vue";
+import HistoriesSection from "../components/Section/HistoriesSection.vue";
+import PostModal from "../components/Modals/PostModal.vue";
 
 export default {
-  name: 'HomePage',
+  name: "HomePage",
   components: { Navbar, SmoothScrollIcon, HistoriesSection, PostModal },
-  props: ['noBg'],
+  props: ["noBg"],
   watch: {
-    // noBg () {
-    //   if (!this.noBg) {
-    //     setTimeout(this.handleTriggerScrollHorizon, 1500)
-    //   }
-    // }
+    noBg() {
+      if (!this.noBg) {
+        setTimeout(this.handleTriggerScrollHorizon, 1500);
+      }
+    }
   },
 
   methods: {
-    handleScroll () {
+    handleScroll() {
       if (this.noBg) {
-        this.$eventBus.$emit('initialScroll')
+        this.$eventBus.$emit("initialScroll");
       }
     },
-    handleTriggerScrollHorizon () {
-      const self = this
+    handleTriggerScrollHorizon() {
+      const self = this;
 
-      if (!document) return
+      if (!document) return;
 
-      const homeEl = document.querySelector('#homeContainer')
+      const homeEl = document.querySelector("#homeContainer");
 
-      if (!homeEl) return
+      if (!homeEl) return;
 
       homeEl.addEventListener(
-        'mousewheel',
+        "mousewheel",
         e => self.scrollHorizon(e, homeEl),
         false
-      )
+      );
     },
-    scrollHorizon (event, element) {
-      var delta = Math.max(-1, Math.min(1, event.wheelDelta || -event.detail))
-      var scrollSpeed = 80
-      element.scrollLeft -= delta * scrollSpeed
-      event.preventDefault()
+    scrollHorizon(event, element) {
+      var delta = Math.max(-1, Math.min(1, event.wheelDelta || -event.detail));
+      var scrollSpeed = 80;
+      element.scrollLeft -= delta * scrollSpeed;
+      event.preventDefault();
     },
-    handleShowArchive () {
-      this.$router.replace({ name: 'Archive' })
+    handleShowArchive() {
+      this.$router.replace({ name: "Archive" });
     }
   },
-  mounted () {
-    // window.addEventListener("mousewheel", this.handleScroll);
-    // window.addEventListener("touchmove", this.handleScroll);
+  mounted() {
+    window.addEventListener("mousewheel", this.handleScroll);
+    window.addEventListener("touchmove", this.handleScroll);
   },
-  destroyed () {
-    // window.removeEventListener("mousewheel", this.handleScroll);
+  destroyed() {
+    window.removeEventListener("mousewheel", this.handleScroll);
 
-    // const homeEl = document.querySelector("#homeContainer");
-    // if (!homeEl) return;
+    const homeEl = document.querySelector("#homeContainer");
+    if (!homeEl) return;
 
-    // homeEl.addEventListener(
-    //   "mousewheel",
-    //   e => this.scrollHorizon(e, homeEl),
-    //   false
-    // );
+    homeEl.addEventListener(
+      "mousewheel",
+      e => this.scrollHorizon(e, homeEl),
+      false
+    );
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
