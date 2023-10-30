@@ -4,6 +4,7 @@ const { createVuePlugin } = require('vite-plugin-vue2')
 dns.setDefaultResultOrder('verbatim')
 
 module.exports = {
+  base: '/landing_page_dt/',
   plugins: [createVuePlugin()],
   externals: ['vue'],
   server: {
