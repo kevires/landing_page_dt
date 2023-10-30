@@ -13,7 +13,7 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    meta: { layout: 'app', public: false },
+    meta: { layout: 'app', public: true },
     component: () => import('@/pages/Home.vue')
   },
   {
