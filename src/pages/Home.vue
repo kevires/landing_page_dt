@@ -1,9 +1,68 @@
 <template>
   <div id="SectionContainer" class="h-full relative min-w-screen overflow-hidden w-full">
     <Transition name="fade-out">
-      <div class="title-container">
-        <p class="text-white mt-24">{{ $t('lbl_history_of_formation_and_development') }}</p>
-        <SmoothScrollIcon></SmoothScrollIcon>
+      <div class="">
+        <!-- <p class="text-white mt-24">{{ $t('lbl_history_of_formation_and_development') }}</p> -->
+        <!-- <SmoothScrollIcon></SmoothScrollIcon> -->
+        <div class="w-full justify-center items-center">
+          <p class="text-white mt-24 text-2xl ml-28">Dịch vụ chúng tôi cung cấp</p>
+          <div class="grid grid-cols-3 gap-4 mt-5 text-white">
+            <div class="flex flex-col justify-center items-center">
+              <p>Tư vấn khảo sát, lắp đặt dự án, thiết kế, kiểm tra</p>
+              <p>...........................................................................................</p>
+              <p>...........................................................................................</p>
+              <p>...........................................................................................</p>
+              <p>...........................................................................................</p>
+              <p>...........................................................................................</p>
+            </div>
+            <div class="flex flex-col justify-center items-center">
+              <p>Kiểm thử phần mềm.....................................................</p>
+              <p>...........................................................................................</p>
+              <p>...........................................................................................</p>
+              <p>...........................................................................................</p>
+              <p>...........................................................................................</p>
+              <p>...........................................................................................</p>
+            </div>
+            <div class="flex flex-col justify-center items-center">
+              <p>Tư vấn đấu thầu............................................................</p>
+              <p>...........................................................................................</p>
+              <p>...........................................................................................</p>
+              <p>...........................................................................................</p>
+              <p>...........................................................................................</p>
+              <p>...........................................................................................</p>
+            </div>
+          </div>
+        </div>
+        <div class="w-full">
+          <p class="text-white mt-24 text-2xl ml-28">Nhân lực của chúng tôi</p>
+          <div class="grid grid-cols-4 gap-4 mt-5 text-white">
+            <div class="flex flex-col justify-center items-center text-lg">
+              <img src="@/assets/user_icon.png" alt="" class="w-24">
+                <p>Ông Phạm Minh Tuấn</p>
+                <p>Giám đốc điều hành</p>
+                <p>TS....</p>
+            </div>
+            <div class="flex flex-col justify-center items-center text-lg">
+              <img src="@/assets/user_icon.png" alt="" class="w-24">
+              <p>Ông Phạm Minh Tuấn</p>
+                <p>Giám đốc điều hành</p>
+                <p>TS....</p>
+            </div>
+            <div class="flex flex-col justify-center items-center text-lg">
+              <img src="@/assets/user_icon.png" alt="" class="w-24">
+              <p>Ông Phạm Minh Tuấn</p>
+                <p>Giám đốc điều hành</p>
+                <p>TS....</p>
+            </div>
+            <div class="flex flex-col justify-center items-center text-lg">
+              <img src="@/assets/user_icon.png" alt="" class="w-24">
+              <p>Ông Phạm Minh Tuấn</p>
+                <p>Giám đốc điều hành</p>
+                <p>TS....</p>
+            </div>
+          </div>
+        </div>
+
       </div>
     </Transition>
     <!-- <div v-show="!noBg" class="bg-orange-150 h-full relative animate__animated animate__zoomIn">
@@ -50,15 +109,15 @@
 </template>
 
 <script>
-import Navbar from "@/components/Navbar.vue";
-import SmoothScrollIcon from "@/components/SmoothScrollIcon.vue";
-import HistoriesSection from "../components/Section/HistoriesSection.vue";
-import PostModal from "../components/Modals/PostModal.vue";
+import Navbar from '@/components/Navbar.vue'
+import SmoothScrollIcon from '@/components/SmoothScrollIcon.vue'
+import HistoriesSection from '../components/Section/HistoriesSection.vue'
+import PostModal from '../components/Modals/PostModal.vue'
 
 export default {
-  name: "HomePage",
+  name: 'HomePage',
   components: { Navbar, SmoothScrollIcon, HistoriesSection, PostModal },
-  props: ["noBg"],
+  props: ['noBg'],
   watch: {
     // noBg() {
     //   if (!this.noBg) {
@@ -68,41 +127,41 @@ export default {
   },
 
   methods: {
-    handleScroll() {
+    handleScroll () {
       if (this.noBg) {
-        this.$eventBus.$emit("initialScroll");
+        this.$eventBus.$emit('initialScroll')
       }
     },
-    handleTriggerScrollHorizon() {
-      const self = this;
+    handleTriggerScrollHorizon () {
+      const self = this
 
-      if (!document) return;
+      if (!document) return
 
-      const homeEl = document.querySelector("#homeContainer");
+      const homeEl = document.querySelector('#homeContainer')
 
-      if (!homeEl) return;
+      if (!homeEl) return
 
       homeEl.addEventListener(
-        "mousewheel",
+        'mousewheel',
         e => self.scrollHorizon(e, homeEl),
         false
-      );
+      )
     },
-    scrollHorizon(event, element) {
-      var delta = Math.max(-1, Math.min(1, event.wheelDelta || -event.detail));
-      var scrollSpeed = 80;
-      element.scrollLeft -= delta * scrollSpeed;
-      event.preventDefault();
+    scrollHorizon (event, element) {
+      var delta = Math.max(-1, Math.min(1, event.wheelDelta || -event.detail))
+      var scrollSpeed = 80
+      element.scrollLeft -= delta * scrollSpeed
+      event.preventDefault()
     },
-    handleShowArchive() {
-      this.$router.replace({ name: "Archive" });
+    handleShowArchive () {
+      this.$router.replace({ name: 'Archive' })
     }
   },
-  mounted() {
+  mounted () {
     // window.addEventListener("mousewheel", this.handleScroll);
     // window.addEventListener("touchmove", this.handleScroll);
   },
-  destroyed() {
+  destroyed () {
     // window.removeEventListener("mousewheel", this.handleScroll);
 
     // const homeEl = document.querySelector("#homeContainer");
@@ -114,7 +173,7 @@ export default {
     //   false
     // );
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
@@ -130,25 +189,22 @@ export default {
   // margin-top: calc(50vh - 128px);
   position: absolute;
   z-index: 1000;
-  top: 50%;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
-  text-align: center;
-  font-size: 36px;
+  // text-align: center;
+  font-size: 28px;
   line-height: 54px;
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  // justify-content: center;
 
   p {
     width: 60vw;
-    margin-left: auto;
-    margin-right: auto;
+    // margin-left: auto;
+    // margin-right: auto;
     transform: translateY(-50%);
-  }
-  .icon-scroll {
-    bottom: 100px;
   }
 }
 #SectionContainer {

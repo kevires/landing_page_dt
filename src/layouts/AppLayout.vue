@@ -2,9 +2,9 @@
   <div class="flex flex-col h-full w-full relative homepage">
     <AppHeader :no-bg="isHome">
       <a href="/" class="flex-1">
-        <div
+        <!-- <div
           class="hidden md:block text-2xl text-white text-center flex-1 cursor-pointer"
-        >{{ $t('lbl_home') }}</div>
+        >{{ $t('lbl_home') }}</div> -->
       </a>
     </AppHeader>
     <div role="main" class="relative flex-1">
@@ -39,7 +39,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .homepage {
-  background-image: url("@/assets/home-background.png");
+  background-image: url("@/assets/6985678.jpg");
   background-size: cover;
   background-position: center;
 }
