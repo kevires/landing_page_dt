@@ -3,20 +3,13 @@
     id="AppHeader"
     class="sticky top-0 z-20"
     :style="`height:${HEADER_HEIGHT}px`"
-    :class="noBg || 'shadow-md bg-primary-550'"
   >
-    <div class="container mx-auto px-4 py-4 h-full">
-      <div class="flex">
-        <div class="flex flex-row space-x-4">
-          <div class="font-serif uppercase text-white flex flex-col items-center justify-center text-4xl">
-            IDT
-          </div>
-          <div class="items-center text-white uppercase justify-center flex-col flex">
-            <p>Công ty cổ phần tư vấn</p>
+    <div class="container mx-auto py-4 h-full">
+      <div class="flex items-center" style="font-family: 'Inter', sans-serif;">
+        <div class="text-white uppercase flex-col flex w-2/5">
+            <p class="ml-3">Công ty cổ phần tư vấn</p>
             <p>Chuyển đổi số quốc tế IDT</p>
         </div>
-        </div>
-
         <slot />
         <nav
           id="Navbar"
@@ -32,6 +25,19 @@
             <div class="my-auto cursor-pointer capitalize">{{ lang.toLocaleLowerCase()}}</div>
           </div>
         </nav>
+        <!-- <nav
+          v-show="isOpen"
+          id="Navbar"
+          class="fixed lg:static top-0 left-0 z-30 h-full lg:h-auto flex flex-col lg:flex-row items-center justify-center lg:justify-end ml-auto text-white transition-opacity w-full opacity-100 visible bg-primary-550"
+        >
+          <div
+            v-for="(nav,index) in NAV_LIST"
+            :key="`${nav}-${index}`"
+            class="p-3 text-[#98A2B3] leading-5 font-bold tracking-[2.8px] cursor-pointer"
+            :class="{'!text-white':currentNav===nav}"
+            @click="handleChangeNav(nav)"
+          >{{ nav }}</div>
+        </nav>-->
       </div>
     </div>
   </header>

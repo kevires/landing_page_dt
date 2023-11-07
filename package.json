@@ -12,6 +12,7 @@
     "amplitude-js": "^8.21.9",
     "animate.css": "^4.1.1",
     "axios": "^1.5.1",
+    "bootstrap-vue": "^2.23.1",
     "boxicons": "^2.1.4",
     "element-ui": "^2.15.14",
     "moment": "^2.29.4",

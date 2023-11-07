@@ -1,11 +1,23 @@
 <template>
   <div class="flex flex-col h-full w-full relative homepage">
     <AppHeader :no-bg="isHome">
-      <a href="/" class="flex-1">
-        <!-- <div
-          class="hidden md:block text-2xl text-white text-center flex-1 cursor-pointer"
-        >{{ $t('lbl_home') }}</div> -->
-      </a>
+      <div class="flex justify-end w-4/12">
+        <a href="/" class="">
+          <div
+            class="text-base text-white text-center cursor-pointer"
+          >{{ $t('lbl_home') }}</div>
+        </a>
+        <a href="/" class="ml-10">
+          <div
+            class="text-base text-white text-center cursor-pointer"
+          >{{ $t('Đội ngũ chuyên gia') }}</div>
+        </a>
+        <a href="/" class="ml-10">
+          <div
+            class=" text-base text-white text-center cursor-pointer"
+          >{{ $t('Hồ sơ năng lực') }}</div>
+        </a>
+      </div>
     </AppHeader>
     <div role="main" class="relative flex-1">
       <slot :no-bg="isHome" />
@@ -39,7 +51,10 @@ export default {
 </script>
 <style lang="scss" scoped>
 .homepage {
-  background-image: url("@/assets/6985678.jpg");
+  // background-image: url("@/assets/home-background.png");
+  // background-color: rgb(95, 136, 232);
+  background: linear-gradient(264deg, #2E43F0 29.39%, #67F 93.49%);
+  height: calc(100vh - 100px);
   background-size: cover;
   background-position: center;
 }

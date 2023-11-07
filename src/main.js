@@ -15,7 +15,6 @@ import i18n from "@/lang";
 import moment from "moment";
 import router from "@/routers";
 import store from "@/stores";
-
 Vue.config.productionTip = false;
 
 Vue.component("app-layout", AppLayout);

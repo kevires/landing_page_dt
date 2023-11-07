@@ -1,25 +1,25 @@
-const { createVuePlugin } = require("vite-plugin-vue2");
-import dns from "dns";
-dns.setDefaultResultOrder("verbatim");
+import dns from 'dns'
 
-import path from "path";
+import path from 'path'
+const { createVuePlugin } = require('vite-plugin-vue2')
+dns.setDefaultResultOrder('verbatim')
 
 module.exports = {
-  base:'/landing_page_dt',
+  base: '/landing_page_dt',
   plugins: [createVuePlugin()],
-  externals: ["vue"],
+  externals: ['vue'],
   server: {
     port: 8000,
-    host: true,
+    host: true
   },
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
-      "@validations": path.resolve(
+      '@': path.resolve(__dirname, './src'),
+      '@validations': path.resolve(
         __dirname,
-        "./src/utils/validations/validations.js"
+        './src/utils/validations/validations.js'
       ),
-      vue: "vue/dist/vue.esm",
-    },
-  },
-};
+      vue: 'vue/dist/vue.esm'
+    }
+  }
+}

@@ -1,6 +1,6 @@
 <template>
   <div id="SectionContainer" class="h-full relative min-w-screen overflow-hidden w-full">
-    <Transition name="fade-out">
+    <Transition name="">
       <div class="">
         <!-- <p class="text-white mt-24">{{ $t('lbl_history_of_formation_and_development') }}</p> -->
         <!-- <SmoothScrollIcon></SmoothScrollIcon> -->
@@ -207,52 +207,52 @@ export default {
     transform: translateY(-50%);
   }
 }
-#SectionContainer {
-  animation: fade-in 1s ease-in-out;
-}
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
+// #SectionContainer {
+//   animation: fade-in 1s ease-in-out;
+// }
+// @keyframes fade-in {
+//   0% {
+//     opacity: 0;
+//   }
+//   100% {
+//     opacity: 1;
+//   }
+// }
 
-#SectionContainer.bg-orange-150 {
-  animation: fade-out 1s ease-in-out;
-}
-@keyframes fade-out {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
+// #SectionContainer.bg-orange-150 {
+//   animation: fade-out 1s ease-in-out;
+// }
+// @keyframes fade-out {
+//   0% {
+//     opacity: 1;
+//   }
+//   100% {
+//     opacity: 0;
+//   }
+// }
 
 #homeContainer {
   // animation: background-fade-in 2s ease-in-out;
 }
-@keyframes background-fade-in {
-  0% {
-    display: none;
-    opacity: 0;
-    background-color: none;
-  }
-  51% {
-    display: none;
-    opacity: 0;
-    background-color: none;
-    transform: scale(0);
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-    --tw-bg-opacity: 1;
-    background-color: rgb(239 238 233 / var(--tw-bg-opacity));
-  }
-}
+// @keyframes background-fade-in {
+//   0% {
+//     display: none;
+//     opacity: 0;
+//     background-color: none;
+//   }
+//   51% {
+//     display: none;
+//     opacity: 0;
+//     background-color: none;
+//     transform: scale(0);
+//   }
+//   100% {
+//     transform: scale(1);
+//     opacity: 1;
+//     --tw-bg-opacity: 1;
+//     background-color: rgb(239 238 233 / var(--tw-bg-opacity));
+//   }
+// }
 
 .fade-out-enter-active,
 .fade-out-leave-active {
@@ -264,30 +264,30 @@ export default {
   opacity: 0;
 }
 
-@media (max-width: 1024px) {
-  #homeContainer {
-    animation: background-fade-in 0.5s ease-in-out;
-  }
+// @media (max-width: 1024px) {
+//   #homeContainer {
+//     animation: background-fade-in 0.5s ease-in-out;
+//   }
 
-  #SectionContainer {
-    animation: fade-in 0.5s ease-in-out;
-  }
+//   #SectionContainer {
+//     animation: fade-in 0.5s ease-in-out;
+//   }
 
-  #SectionContainer.bg-orange-150 {
-    animation: fade-out 0.5s ease-in-out;
-  }
+//   #SectionContainer.bg-orange-150 {
+//     animation: fade-out 0.5s ease-in-out;
+//   }
 
-  .fade-out-leave-active {
-    transition: opacity 0.5s ease;
-  }
+//   .fade-out-leave-active {
+//     transition: opacity 0.5s ease;
+//   }
 
-  .title-container {
-    font-size: 24px;
-    line-height: 40px;
+//   .title-container {
+//     font-size: 24px;
+//     line-height: 40px;
 
-    .icon-scroll {
-      bottom: 60px;
-    }
-  }
-}
+//     .icon-scroll {
+//       bottom: 60px;
+//     }
+//   }
+// }
 </style>
