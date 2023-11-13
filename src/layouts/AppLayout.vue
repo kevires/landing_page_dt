@@ -1,11 +1,12 @@
 <template>
-  <div class="flex flex-col h-full w-full relative homepage">
+  <div>
+    <div class="flex flex-col h-full w-full relative homepage">
     <AppHeader :no-bg="isHome">
       <div class="flex justify-end w-4/12">
         <a href="/" class="">
           <div
             class="text-base text-white text-center cursor-pointer"
-          >{{ $t('lbl_home') }}</div>
+          >{{ $t('Trang chủ') }}</div>
         </a>
         <a href="/" class="ml-10">
           <div
@@ -23,39 +24,46 @@
       <slot :no-bg="isHome" />
     </div>
   </div>
+  </div>
 </template>
 
 <script>
-import AppHeader from "../components/AppHeader.vue";
+import AppHeader from '../components/AppHeader.vue'
 
 export default {
-  name: "AppLayout",
+  name: 'AppLayout',
   components: { AppHeader },
-  data() {
+  data () {
     return {
       isHome: true
-    };
+    }
   },
-  mounted() {
-    this.$eventBus.$on("initialScroll", this.handlerInitialScroll);
+  mounted () {
+    this.$eventBus.$on('initialScroll', this.handlerInitialScroll)
   },
-  unmounted() {
-    this.$eventBus.$off("initialScroll", this.handlerInitialScroll);
+  unmounted () {
+    this.$eventBus.$off('initialScroll', this.handlerInitialScroll)
   },
   methods: {
-    handlerInitialScroll() {
-      this.isHome = false;
+    handlerInitialScroll () {
+      this.isHome = false
     }
   }
-};
+}
 </script>
 <style lang="scss" scoped>
 .homepage {
-  // background-image: url("@/assets/home-background.png");
-  // background-color: rgb(95, 136, 232);
-  background: linear-gradient(264deg, #2E43F0 29.39%, #67F 93.49%);
-  height: calc(100vh - 100px);
+  background-image: url("../assets/images/backgroud-gr-1.png");
+  height: calc(100vh - 200px);
   background-size: cover;
   background-position: center;
+  font-family: 'Inter', sans-serif;
+}
+.background_main {
+  background: linear-gradient(264deg, #2E43F0 29.39%, #67F 93.49%);
+  position: absolute;
+  z-index: 2;
+  height: calc(100vh - 100px);
+
 }
 </style>

@@ -1,17 +1,17 @@
 <template>
   <header
     id="AppHeader"
-    class="sticky top-0 z-20"
+    class="top-0 z-40"
     :style="`height:${HEADER_HEIGHT}px`"
   >
     <div class="container mx-auto py-4 h-full">
-      <div class="flex items-center" style="font-family: 'Inter', sans-serif;">
+      <div class="flex items-center" style="">
         <div class="text-white uppercase flex-col flex w-2/5">
             <p class="ml-3">Công ty cổ phần tư vấn</p>
             <p>Chuyển đổi số quốc tế IDT</p>
         </div>
         <slot />
-        <nav
+        <!-- <nav
           id="Navbar"
           class="z-30 h-auto flex items-center justify-end ml-auto text-white transition-opacity"
         >
@@ -24,7 +24,7 @@
           >
             <div class="my-auto cursor-pointer capitalize">{{ lang.toLocaleLowerCase()}}</div>
           </div>
-        </nav>
+        </nav> -->
         <!-- <nav
           v-show="isOpen"
           id="Navbar"
@@ -128,4 +128,3 @@ export default {
   }
 }
 </style>
-  
