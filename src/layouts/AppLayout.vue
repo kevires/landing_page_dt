@@ -54,7 +54,7 @@ export default {
 <style lang="scss" scoped>
 .homepage {
   background-image: url("../assets/images/backgroud-gr-1.png");
-  height: calc(100vh - 200px);
+  height: calc(100vh - 250px);
   background-size: cover;
   background-position: center;
   font-family: 'Inter', sans-serif;

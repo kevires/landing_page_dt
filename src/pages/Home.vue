@@ -5,11 +5,10 @@
       <div class="w-2/3 justify-center items-center">
         <div class="grid grid-cols-2 gap-4 mt-5 text-white">
           <div class="">
-            <div class="flex">
-              <p class="text-white mt-6 text-4xl font-semibold leading-normal">Dịch vụ chúng tôi cung cấp</p>
+            <div style="color: white; font-size: 35px; font-weight: 600; word-wrap: break-word">Dịch vụ chúng tôi cung cấp
             </div>
             <div class="mt-8">
-              <div class="flex class mb-6">
+              <!-- <div class="flex class mb-6">
                 <div class="mx-auto flex">
                   <div>
                     <img src="../assets/icon/about-icon-02.png" alt="" width="60" class="mt-2">
@@ -41,10 +40,51 @@
                     <p class="leading-9">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                   </div>
                 </div>
+              </div> -->
+              <div
+                style="width: 536px; height: 430px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 32px; display: inline-flex">
+                <div style="justify-content: flex-start; align-items: flex-start; gap: 32px; display: inline-flex">
+                  <img src="../assets/icon/about-icon-02.png" alt="" style="width: 60px; height: 60px;">
+                  <div
+                    style="flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: inline-flex">
+                    <div
+                      style="color: white; font-size: 28px;  font-weight: 400; word-wrap: break-word">
+                      Tư vấn, khảo sát, lập dự án</div>
+                    <div
+                      style="width: 414px; color: white; font-size: 18px;  font-weight: 400; line-height: 36px; word-wrap: break-word">
+                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. </div>
+                  </div>
+                </div>
+                <div style="justify-content: flex-start; align-items: flex-start; gap: 32px; display: inline-flex">
+                  <img src="../assets/icon/about-icon-01.png" alt="" style="width: 60px; height: 60px;">
+                  <div
+                    style="flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: inline-flex">
+                    <div
+                      style="color: white; font-size: 28px;  font-weight: 400; word-wrap: break-word">
+                      Kiểm thử phần mềm</div>
+                    <div
+                      style="width: 414px; color: white; font-size: 18px;  font-weight: 400; line-height: 36px; word-wrap: break-word">
+                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. </div>
+                  </div>
+                </div>
+                <div style="justify-content: flex-start; align-items: flex-start; gap: 32px; display: inline-flex">
+                  <img src="../assets/icon/about-icon-03.png" alt="" style="width: 60px; height: 60px;">
+                  <div
+                    style="flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: inline-flex">
+                    <div
+                      style="color: white; font-size: 28px;  font-weight: 400; word-wrap: break-word">
+                      Tư vấn đấu thầu</div>
+                    <div
+                      style="width: 414px; color: white; font-size: 18px;  font-weight: 400; line-height: 36px; word-wrap: break-word">
+                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="image_develop" />
+          <div style="width: 544px; height: 490px; justify-content: center; align-items: center; display: inline-flex">
+            <img style="width: 544px; height: 490px" src="../assets/images/web-development 1.png" />
+          </div>
         </div>
       </div>
     </div>
