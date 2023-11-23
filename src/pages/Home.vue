@@ -105,7 +105,7 @@
     <div class="profile">
       <div style="width: 1084px; height: 392px; position: relative">
         <div style="width: 504px; height: 338px; left: 580px; top: 27px; position: absolute; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 40px; display: inline-flex">
-          <div style="color: white; font-size: 35px; font-weight: 600; word-wrap: break-word">Hồ sơ năng lực</div>
+          <div style="color: white; font-size: 35px; font-weight: 600; word-wrap: break-word">Kinh nghiệm triển khai</div>
           <div style="width: 504px; color: white; font-size: 18px;  font-weight: 400; line-height: 36px; word-wrap: break-word">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </div>
           <div style="justify-content: center; align-items: center; gap: 16px; display: inline-flex">
             <div
