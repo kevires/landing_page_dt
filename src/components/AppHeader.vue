@@ -1,110 +1,145 @@
 <template>
-  <header
-    id="AppHeader"
-    class="top-0 z-40"
-    :style="`height:${HEADER_HEIGHT}px`"
-  >
+  <header id="AppHeader" class="top-0 z-40 mb-12" :style="`height:${HEADER_HEIGHT}px`">
     <div class="container mx-auto py-4 h-full">
-      <div class="flex items-center" style="">
-        <div class="text-white uppercase flex-col flex w-2/5">
-            <p class="ml-3">Công ty cổ phần tư vấn</p>
-            <p>Chuyển đổi số quốc tế IDT</p>
-        </div>
-        <slot />
-        <!-- <nav
-          id="Navbar"
-          class="z-30 h-auto flex items-center justify-end ml-auto text-white transition-opacity"
-        >
-          <div
-            v-for="(lang,index) in Object.values(LANGUAGE_CODES_NAME)"
-            :key="index"
-            @click="changeLanguage(lang)"
-            class="flex p-3 md:p-4 lg:mb-0 tab-item text-lg h-full text-[#747474]"
-            :class="{'!text-white': $lang === lang.toLocaleLowerCase()}"
-          >
-            <div class="my-auto cursor-pointer capitalize">{{ lang.toLocaleLowerCase()}}</div>
+      <div style="width: 100%; height: 64px; position: relative">
+        <div class="space-x-20 group_router">
+          <div class="group_router_item">
+            <div
+              :style="hightLightRouter('Home')"
+              @click="$router.push({name: 'Home'})"
+              >
+              Trang chủ
+            </div>
           </div>
-        </nav> -->
-        <!-- <nav
-          v-show="isOpen"
-          id="Navbar"
-          class="fixed lg:static top-0 left-0 z-30 h-full lg:h-auto flex flex-col lg:flex-row items-center justify-center lg:justify-end ml-auto text-white transition-opacity w-full opacity-100 visible bg-primary-550"
-        >
-          <div
-            v-for="(nav,index) in NAV_LIST"
-            :key="`${nav}-${index}`"
-            class="p-3 text-[#98A2B3] leading-5 font-bold tracking-[2.8px] cursor-pointer"
-            :class="{'!text-white':currentNav===nav}"
-            @click="handleChangeNav(nav)"
-          >{{ nav }}</div>
-        </nav>-->
+          <div class="group_router_item">
+            <div
+            :style="hightLightRouter('HR')"
+            @click="$router.push({name: 'HR'})"
+              >
+              Đội ngũ chuyên gia
+            </div>
+          </div>
+          <div class="group_router_item">
+            <div
+            :style="hightLightRouter('Profile')"
+            @click="$router.push({name: 'Profile'})"
+              >
+              Hồ sơ năng lực</div>
+          </div>
+        </div>
+        <!-- <div
+          style="width: 101px; height: 25px; left: 1213px; top: 22px; position: absolute; justify-content: center; align-items: center; gap: 8px; display: inline-flex">
+          <div style="color: white;  font-weight: 600; word-wrap: break-word">VN
+          </div>
+          <img style="width: 30px; height: 19.96px" src="https://via.placeholder.com/30x20" />
+          <div style="width: 25px; height: 25px; position: relative">
+            <div
+              style="width: 25px; height: 25px; left: 0px; top: 0px; position: absolute; opacity: 0; background: white">
+            </div>
+            <div style="width: 14.61px; height: 7.30px; left: 5.21px; top: 9.37px; position: absolute; background: white">
+            </div>
+          </div>
+        </div> -->
+        <div
+          style="left: 0px; top: 0px; position: absolute; text-align: center; color: white;  font-weight: 600; line-height: 32px; word-wrap: break-word; font-size: calc(2rem - 13px)">
+          CÔNG TY CỔ PHẦN TƯ VẤN<br />CHUYỂN ĐỔI SỐ QUỐC TẾ DT</div>
       </div>
     </div>
   </header>
 </template>
-  
-  <script>
-import { LANGUAGE_CODES_NAME } from "@/lang";
-import { NAV_LIST } from "../utils/constant";
 
-export const HEADER_HEIGHT = 90;
+<script>
+import { LANGUAGE_CODES_NAME } from '@/lang'
+import { NAV_LIST } from '../utils/constant'
+
+export const HEADER_HEIGHT = 90
 
 export default {
-  name: "AppHeader",
+  name: 'AppHeader',
   components: {},
-  data() {
+  data () {
     return {
       LANGUAGE_CODES_NAME,
       NAV_LIST,
       isOpen: false,
       currentNav: NAV_LIST[0],
       HEADER_HEIGHT
-    };
+    }
   },
-  props: ["noBg"],
+  props: ['noBg'],
   computed: {},
+  created () {
+    console.log(this.$route.name)
+  },
   methods: {
-    toggleMenu() {
-      this.isOpen = !this.isOpen;
+    hightLightRouter (name) {
+      const cunrentRouter = this.$route.name
+      if (cunrentRouter !== name) return 'opacity: 0.50'
+      return ''
     },
-    changeLanguage(l) {
-      const lang = l?.toLocaleLowerCase();
-      this.$lang = lang;
-      this.$forceUpdate();
+    toggleMenu () {
+      this.isOpen = !this.isOpen
     },
-    handleChangeNav(nav) {
-      this.currentNav = nav;
+    changeLanguage (l) {
+      const lang = l?.toLocaleLowerCase()
+      this.$lang = lang
+      this.$forceUpdate()
+    },
+    handleChangeNav (nav) {
+      this.currentNav = nav
     }
   }
-};
-</script>
-  
-<style lang="scss" scoped>
-#AppHeader {
-  animation: fade-in 2s ease-in-out;
 }
+</script>
+
+<style lang="scss" scoped>
+.group_router {
+  left: 40rem;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.group_router_item {
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  word-wrap: break-word;
+  font-size: calc(2rem - 13px);
+  color: white;
+  cursor: pointer;
+}
+
 @keyframes fade-in {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
 }
+
 #AppHeader.shadow-md.bg-primary-550 {
   animation: initial-scroll 2s ease-in-out;
 }
+
 @keyframes initial-scroll {
   0% {
     opacity: 1;
     background: transparent;
     box-shadow: none;
   }
+
   50% {
     opacity: 0;
     background: transparent;
     box-shadow: none;
   }
+
   100% {
     opacity: 1;
     --tw-bg-opacity: 1;

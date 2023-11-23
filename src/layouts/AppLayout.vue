@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="flex flex-col h-full w-full relative homepage">
+    <div class="flex flex-col h-full w-full homepage">
     <AppHeader :no-bg="isHome">
       <div class="flex justify-end w-4/12">
         <a href="/" class="">
@@ -54,7 +54,7 @@ export default {
 <style lang="scss" scoped>
 .homepage {
   background-image: url("../assets/images/backgroud-gr-1.png");
-  height: calc(100vh - 250px);
+  height: 45rem;
   background-size: cover;
   background-position: center;
   font-family: 'Inter', sans-serif;

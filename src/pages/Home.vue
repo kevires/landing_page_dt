@@ -3,44 +3,11 @@
     <!-- Service -->
     <div class="justify-center items-center flex">
       <div class="w-2/3 justify-center items-center">
-        <div class="grid grid-cols-2 gap-4 mt-5 text-white">
+        <div class="grid grid-cols-2 gap-4 text-white">
           <div class="">
             <div style="color: white; font-size: 35px; font-weight: 600; word-wrap: break-word">Dịch vụ chúng tôi cung cấp
             </div>
             <div class="mt-8">
-              <!-- <div class="flex class mb-6">
-                <div class="mx-auto flex">
-                  <div>
-                    <img src="../assets/icon/about-icon-02.png" alt="" width="60" class="mt-2">
-                  </div>
-                  <div class="flex flex-col ml-5">
-                    <p class="text-2xl font-normal">Tư vấn khảo sát, lắp đặt dự án</p>
-                    <p class="leading-9">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="flex class mb-6">
-                <div class="mx-auto flex">
-                  <div>
-                    <img src="../assets/icon/about-icon-01.png" alt="" width="60" class="mt-2">
-                  </div>
-                  <div class="flex flex-col ml-5">
-                    <p class="text-2xl font-normal">Kiểm thử phần mềm</p>
-                    <p class="leading-9">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="flex class mb-6">
-                <div class="mx-auto flex">
-                  <div>
-                    <img src="../assets/icon/about-icon-03.png" alt="" width="60" class="mt-2">
-                  </div>
-                  <div class="flex flex-col ml-5">
-                    <p class="text-2xl font-normal">Tư vấn đấu thầu</p>
-                    <p class="leading-9">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                  </div>
-                </div>
-              </div> -->
               <div
                 style="width: 536px; height: 430px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 32px; display: inline-flex">
                 <div style="justify-content: flex-start; align-items: flex-start; gap: 32px; display: inline-flex">
@@ -89,7 +56,7 @@
       </div>
     </div>
     <!-- HR -->
-    <div class="mb-4 w-full justify-center item-center flex mt-20">
+    <div class="mb-12 w-full justify-center item-center flex mt-20">
       <div
         style="width: 100%; height: 362px; flex-direction: column; justify-content: flex-start; align-items: center; gap: 48px; display: inline-flex">
         <div style="color: black; font-size: 35px; font-weight: 600; word-wrap: break-word">Đôi ngũ
@@ -134,6 +101,24 @@
         </div>
       </div>
     </div>
+    <!-- Profile -->
+    <div class="profile">
+      <div style="width: 1084px; height: 392px; position: relative">
+        <div style="width: 504px; height: 338px; left: 580px; top: 27px; position: absolute; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 40px; display: inline-flex">
+          <div style="color: white; font-size: 35px; font-weight: 600; word-wrap: break-word">Hồ sơ năng lực</div>
+          <div style="width: 504px; color: white; font-size: 18px;  font-weight: 400; line-height: 36px; word-wrap: break-word">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </div>
+          <div style="justify-content: center; align-items: center; gap: 16px; display: inline-flex">
+            <div
+              style="color: white; font-size: 16px; font-weight: 400; line-height: 36px; word-wrap: break-word; cursor: pointer;"             @click="$router.push({name: 'Profile'})"
+>Xem chi tiết tại đây </div>
+            <div style="width: 25px; height: 15.62px;">
+              <img src="../assets/images/right_arrow.png" alt="">
+            </div>
+          </div>
+        </div>
+        <img style="width: 500px; height: 392px; left: 0px; top: 0px; position: absolute; background: linear-gradient(0deg, #C4C4C4 0%, #C4C4C4 100%); border-radius: 10px" src="../assets/images/profile_image.png" />
+      </div>
+    </div>
 
   </div>
 </template>
@@ -141,61 +126,12 @@
 <script>
 export default {
   name: 'HomePage',
-  props: ['noBg'],
-  watch: {
-    // noBg() {
-    //   if (!this.noBg) {
-    //     setTimeout(this.handleTriggerScrollHorizon, 1500);
-    //   }
-    // }
-  },
 
   methods: {
-    handleScroll () {
-      if (this.noBg) {
-        this.$eventBus.$emit('initialScroll')
-      }
-    },
-    handleTriggerScrollHorizon () {
-      const self = this
-
-      if (!document) return
-
-      const homeEl = document.querySelector('#homeContainer')
-
-      if (!homeEl) return
-
-      homeEl.addEventListener(
-        'mousewheel',
-        e => self.scrollHorizon(e, homeEl),
-        false
-      )
-    },
-    scrollHorizon (event, element) {
-      var delta = Math.max(-1, Math.min(1, event.wheelDelta || -event.detail))
-      var scrollSpeed = 80
-      element.scrollLeft -= delta * scrollSpeed
-      event.preventDefault()
-    },
-    handleShowArchive () {
-      this.$router.replace({ name: 'Archive' })
-    }
   },
   mounted () {
-    // window.addEventListener("mousewheel", this.handleScroll);
-    // window.addEventListener("touchmove", this.handleScroll);
   },
   destroyed () {
-    // window.removeEventListener("mousewheel", this.handleScroll);
-
-    // const homeEl = document.querySelector("#homeContainer");
-    // if (!homeEl) return;
-
-    // homeEl.addEventListener(
-    //   "mousewheel",
-    //   e => this.scrollHorizon(e, homeEl),
-    //   false
-    // );
   }
 }
 </script>
@@ -241,4 +177,14 @@ export default {
 
 .image_develop {
   background: url("../assets/images/web-development\ 1.png") no-repeat;
-}</style>
+}
+.profile {
+  height: 30rem;
+  width: 100%;
+  background: url("../assets/images/background-gr-2.png")  no-repeat;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+</style>
