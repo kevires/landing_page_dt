@@ -23,16 +23,18 @@
     <div role="main" class="relative flex-1">
       <slot :no-bg="isHome" />
     </div>
+    <Footer/>
   </div>
   </div>
 </template>
 
 <script>
 import AppHeader from '../components/AppHeader.vue'
+import Footer from '../components/Footer.vue'
 
 export default {
   name: 'AppLayout',
-  components: { AppHeader },
+  components: { AppHeader, Footer },
   data () {
     return {
       isHome: true
