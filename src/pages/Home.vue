@@ -59,8 +59,7 @@
     <div class="mb-12 w-full justify-center item-center flex mt-20">
       <div
         style="width: 100%; height: 362px; flex-direction: column; justify-content: flex-start; align-items: center; gap: 48px; display: inline-flex">
-        <div style="color: black; font-size: 35px; font-weight: 600; word-wrap: break-word">Đôi ngũ
-          chuyên gia</div>
+        <div style="color: black; font-size: 35px; font-weight: 600; word-wrap: break-word">Cơ cấu tổ chức</div>
         <div style="justify-content: flex-start; align-items: center; gap: 72px; display: inline-flex">
           <div
             style="flex-direction: column; justify-content: flex-start; align-items: center; gap: 8px; display: inline-flex">

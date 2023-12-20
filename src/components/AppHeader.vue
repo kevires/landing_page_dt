@@ -16,16 +16,16 @@
             :style="hightLightRouter('HR')"
             @click="$router.push({name: 'HR'})"
               >
-              Đội ngũ chuyên gia
+              Cơ cấu tổ chức
             </div>
           </div>
-          <div class="group_router_item">
+          <!-- <div class="group_router_item">
             <div
             :style="hightLightRouter('Profile')"
             @click="$router.push({name: 'Profile'})"
               >
               Hồ sơ năng lực</div>
-          </div>
+          </div> -->
         </div>
         <!-- <div
           style="width: 101px; height: 25px; left: 1213px; top: 22px; position: absolute; justify-content: center; align-items: center; gap: 8px; display: inline-flex">
@@ -94,7 +94,7 @@ export default {
 
 <style lang="scss" scoped>
 .group_router {
-  left: 40rem;
+  left: 60rem;
   position: absolute;
   display: flex;
   justify-content: space-between;

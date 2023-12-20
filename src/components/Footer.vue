@@ -1,37 +1,127 @@
 <template>
   <footer id="AppHeader" class="top-0 z-40 mb-12" :style="`height:${HEADER_HEIGHT}px`">
-    <div class="container mx-auto py-4 h-full">
-      <div style="width: 100%; height: 64px; position: relative">
-        <div class="space-x-20 group_router">
-          <div class="group_router_item">
-            <div
-              :style="hightLightRouter('Home')"
-              @click="$router.push({name: 'Home'})"
-              >
-              Trang chủ
-            </div>
-          </div>
-          <div class="group_router_item">
-            <div
-            :style="hightLightRouter('HR')"
-            @click="$router.push({name: 'HR'})"
-              >
-              Đội ngũ chuyên gia
-            </div>
-          </div>
-          <!-- <div class="group_router_item">
-            <div
-            :style="hightLightRouter('Profile')"
-            @click="$router.push({name: 'Profile'})"
-              >
-              Hồ sơ năng lực</div>
-          </div> -->
+    <div class="w-full h-[366px] pl-[154px] pr-[121px] pt-[30px] pb-[57.43px] bg-white shadow justify-center gap-52 inline-flex">
+  <div class="w-[484.37px] h-[278.57px] relative">
+    <div class="w-[113.37px] h-[80.57px] left-0 top-[86px] absolute">
+      <div class="w-[113.37px] h-[27.57px] left-0 top-[53px] absolute text-center text-neutral-900 text-xs font-bold ">Company</div>
+      <div class="w-[38.79px] h-[43.83px] left-[38px] top-0 absolute">
+        <div class="w-[25.25px] h-[24.54px] left-[10.25px] top-[9.64px] absolute">
+          <img src="../assets/g4712.png" alt="">
         </div>
-        <div
-          style="left: 0px; top: 0px; position: absolute; text-align: center; color: white;  font-weight: 600; line-height: 32px; word-wrap: break-word; font-size: calc(2rem - 13px)">
-          CÔNG TY CỔ PHẦN TƯ VẤN<br />CHUYỂN ĐỔI SỐ QUỐC TẾ DT</div>
       </div>
     </div>
+    <div class="w-[113.37px] h-[80.57px] left-[129px] top-[86px] absolute">
+      <div class="w-[113.37px] h-[27.57px] left-0 top-[53px] absolute text-center text-neutral-900 text-xs font-bold ">Company</div>
+      <div class="w-[38.79px] h-[43.83px] left-[38px] top-0 absolute">
+        <div class="w-[25.25px] h-[24.54px] left-[10.25px] top-[9.64px] absolute">
+          <img src="../assets/g4712.png" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="w-[113.37px] h-[80.57px] left-[258px] top-[86px] absolute">
+      <div class="w-[113.37px] h-[27.57px] left-0 top-[53px] absolute text-center text-neutral-900 text-xs font-bold ">Company</div>
+      <div class="w-[38.79px] h-[43.83px] left-[38px] top-0 absolute">
+        <div class="w-[25.25px] h-[24.54px] left-[10.25px] top-[9.64px] absolute">
+          <img src="../assets/g4712.png" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="w-[113.37px] h-[80.57px] left-[371px] top-[86px] absolute">
+      <div class="w-[113.37px] h-[27.57px] left-0 top-[53px] absolute text-center text-neutral-900 text-xs font-bold ">Company</div>
+      <div class="w-[38.79px] h-[43.83px] left-[38px] top-0 absolute">
+        <div class="w-[25.25px] h-[24.54px] left-[10.25px] top-[9.64px] absolute">
+          <img src="../assets/g4712.png" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="w-[113.37px] h-[80.57px] left-0 top-[198px] absolute">
+      <div class="w-[113.37px] h-[27.57px] left-0 top-[53px] absolute text-center text-neutral-900 text-xs font-bold ">Company</div>
+      <div class="w-[38.79px] h-[43.83px] left-[38px] top-0 absolute">
+        <div class="w-[25.25px] h-[24.54px] left-[10.25px] top-[9.64px] absolute">
+          <img src="../assets/g4712.png" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="w-[113.37px] h-[80.57px] left-[129px] top-[198px] absolute">
+      <div class="w-[113.37px] h-[27.57px] left-0 top-[53px] absolute text-center text-neutral-900 text-xs font-bold ">Company</div>
+      <div class="w-[38.79px] h-[43.83px] left-[38px] top-0 absolute">
+        <div class="w-[25.25px] h-[24.54px] left-[10.25px] top-[9.64px] absolute">
+          <img src="../assets/g4712.png" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="w-[113.37px] h-[80.57px] left-[258px] top-[198px] absolute">
+      <div class="w-[113.37px] h-[27.57px] left-0 top-[53px] absolute text-center text-neutral-900 text-xs font-bold ">Company</div>
+      <div class="w-[38.79px] h-[43.83px] left-[38px] top-0 absolute">
+        <div class="w-[25.25px] h-[24.54px] left-[10.25px] top-[9.64px] absolute">
+          <img src="../assets/g4712.png" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="w-[113.37px] h-[80.57px] left-[371px] top-[198px] absolute">
+      <div class="w-[113.37px] h-[27.57px] left-0 top-[53px] absolute text-center text-neutral-900 text-xs font-bold ">Company</div>
+      <div class="w-[38.79px] h-[43.83px] left-[38px] top-0 absolute">
+        <div class="w-[25.25px] h-[24.54px] left-[10.25px] top-[9.64px] absolute">
+          <img src="../assets/g4712.png" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="left-[38px] top-0 absolute text-black text-[35px] font-semibold ">Đối tác</div>
+  </div>
+  <div class="w-[440px] h-[265px]">
+    <div class="text-black text-[35px] font-semibold ">Liên hệ</div>
+    <div class="mt-8">
+      <div class="flex  gap-8">
+          <div class="w-8 h-8 flex">
+            <img src="../assets/phone.png" alt="">
+          </div>
+          <div class="font-normal item-center text-center mt-1">
+            02436367886
+          </div>
+    </div>
+    <div class="flex  gap-8 mt-5">
+          <div class="w-8 h-8 flex">
+            <img src="../assets/email.png" alt="">
+          </div>
+          <div class="font-normal item-center text-center mt-1">
+            toanhn@hanoimedia.vn
+          </div>
+    </div>
+    <div class="flex  gap-8 mt-5">
+          <div class="w-11 h-8 flex">
+            <img src="../assets/location.png" alt="">
+          </div>
+          <div class="font-normal mt-1">
+            Tầng 4 số 165 Bà Triệu - Quận Hai Bà Trưng - Thành phố Hà Nội
+          </div>
+    </div>
+    </div>
+<!--
+    <div class="w-[244.43px] h-[52px] left-0 top-[70px] absolute">
+      <div class="w-[167.43px] h-[23.01px] left-[77px] top-[18px] absolute text-neutral-900 text-base font-semibold ">02436367886</div>
+      <div class="w-[50px] h-[50px] top-0 absolute inline-flex">
+        <div class="w-[30.33px] h-[48px] relative flex-col justify-start items-start flex">
+          <img src="../assets/phone.png" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="w-[438px] h-[52px] left-[2px] top-[213px] absolute">
+      <div class="w-[363px] left-[75px] top-[6px] absolute text-neutral-900 text-base font-semibold  leading-[15.02px]">Tầng 4 số 165 Bà Triệu - Quận Hai Bà Trưng -       Thành phố Hà Nội</div>
+        <div class="w-[52px] h-[52px] px-[10.83px] pt-[6.50px] pb-[4.33px] left-0 top-0 absolute justify-center items-center inline-flex">
+        <div class="w-[52px] h-[52px] relative flex-col justify-start items-start flex">
+          <img src="../assets/location.png" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="w-[390.32px] h-[52px] left-[2px] top-[141px] absolute">
+      <div class="w-[315.32px] h-[23.01px] left-[75px] top-[16px] absolute text-neutral-900 text-base font-semibold ">toanhn@hanoimedia.vn</div>
+      <div class="w-[32px] h-[32px] absolute">
+        <img src="../assets/email.png" alt="">
+      </div>
+      <div class="w-[41.90px] h-[34.55px] left-[5px] top-[11.15px] absolute"></div>
+    </div> -->
+  </div>
+</div>
   </footer>
 </template>
 
